@@ -39,8 +39,9 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: -5px;
+  padding: 5px; /* Adjust padding to make it smaller */
   position: fixed;
-  width: 50%;
+  width: 100%; /* Set width to 100% for full width across the screen */
   bottom: 0;
 }
+
