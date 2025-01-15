@@ -1,56 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harish Palutla - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Harish Palutla</title>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/media-selection.js"></script>
+  <script type="text/javascript" src="js/console.js"></script>
+  <script type="text/javascript" src="js/projects/projects.js"></script>
+  <script type="text/javascript" src="js/projects/projects-cards-updater.js"></script>
+  <script type="text/javascript" src="js/projects/languages-field.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/cards.css">
+  <link rel="stylesheet" type="text/css" href="styles/timeline.css">
+  <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+  <link rel="stylesheet" type="text/css" href="styles/console.css">
+  <link rel="stylesheet" type="text/css" href="styles/projects.css">
+  <link rel="icon" href="assets/favicon.ico">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="profile-container">
-      <img src="/Port/IMG_2051.jpg" alt="Harish Palutla" class="profile-img">
-      <h1>Harish Palutla</h1>
-      <p>Software Developer</p>
+  <nav id="mysidenav" class="sidenav">
+    <div id="mysidenavcontent" class="sidenavcontent">
+      <img src="/Port/IMG_2051.jpg" alt="Profile picture" class="profile-picture" loading="lazy">
+      <p class="sidebarname">Harish Palutla</p>
+      <hr>
+      <p class="sidebarcitation">"Innovate and Inspire."</p>
+      <p class="sidebarauthor">- Personal Motto</p>
+      <hr>
+      <div class="row">
+        <div class="column">
+          <a href="https://www.linkedin.com/in/harishpalutla/" target="_blank">
+            <img id="linkedin" src="assets/medias/linkedin.png" onMouseOver="selected(this)"
+              onMouseOut="unselected(this)" alt="Go to LinkedIn profile" class="mediaicon" loading="lazy"> 
+          </a>
+        </div>
+        <div class="column">
+          <a href="https://github.com/harishpalutla" target="_blank">
+            <img id="github" src="assets/medias/github.png" onMouseOver="selected(this)"
+              onMouseOut="unselected(this)" alt="Go to GitHub profile" class="mediaicon" loading="lazy">
+          </a>
+        </div>
+        <div class="column">
+          <a href="https://www.facebook.com/harishpalutla/" target="_blank">
+            <img id="facebook" src="assets/medias/facebook.png" onMouseOver="selected(this)"
+              onMouseOut="unselected(this)" alt="Go to Facebook profile" class="mediaicon" loading="lazy">
+          </a>
+        </div>
+        <div class="column">
+          <a href="https://www.instagram.com/harishpalutla/" target="_blank">
+            <img id="instagram" src="assets/medias/instagram.png" onMouseOver="selected(this)"
+              onMouseOut="unselected(this)" alt="Go to Instagram profile" class="mediaicon" loading="lazy">
+          </a>
+        </div>
+      </div>
+
+      <div class="nav_btns">
+        <button id="btn_aboutme" onClick="navscroll(this)">ABOUT ME</button><br>
+        <button id="btn_myskills" onClick="navscroll(this)">MY SKILLS</button><br>
+        <button id="btn_work" onClick="navscroll(this)">WORK EXPERIENCE</button><br>
+        <button id="btn_education" onClick="navscroll(this)">EDUCATION</button><br>
+        <button id="btn_projects" onClick="navscroll(this)">PROJECTS</button><br>
+      </div>
+      
+      <div class="nav_bottom_btns">
+        <div class="column_button">
+          <button onclick="location.href='mailto:harishpalutla71@gmail.com'" id="btn_contactme">CONTACT ME</button>
+        </div>
+        <div class="column_button">
+          <button onclick="location.href='attachments/Resume_Harish_Palutla.pdf'" target="_blank" id="btn_viewresume">GET MY CV</button>
+        </div>              
+      </div>
+
     </div>
-  </header>
+  </nav>
 
-  <div class="main-container">
-    <div class="left-column">
-      <img src="/Port/IMG_2051.jpg" alt="Harish Palutla" class="profile-img">
-    </div>
-    <div class="right-column">
-      <section class="about">
-        <h2>About Me</h2>
-        <p>Dedicated Software Developer with over 1.7 years of experience...</p>
-      </section>
+  <div id="mycontent" class="content">
+    <section id="about_me" class="scroll-element">
+      <div class="title">
+        <h1 class="firstname">HARISH</h1>
+        <h1 class="lastname">PALUTLA</h1>
+      </div>
+      <div class="container">
+        <img id="console" class="console_img" src="assets/console.png" loading="lazy">
+        <div id="typedtext" class="typedtextclass"></div> 
+      </div> 
+    </section>
 
-      <section class="experience">
-        <h2>Professional Experience</h2>
-        <h3>Capgemini</h3>
-        <p><strong>Software Developer</strong> | June 2021 – December 2022</p>
-        <ul>
-          <li>Developed and maintained Java-based applications...</li>
-        </ul>
-      </section>
+    <section id="my_skills" class="aftertw scroll-element">
+      <h1 class="titlehead">MY SKILLS</h1>
+      <div id="skills_grid_view" class="skill-cards">
+        <div id="embedded_systems_development" class="card">
+          <h3 class="card_title">Embedded Systems Developer</h3>
+          <img id="embedded_systems_logo" alt="Embedded Systems" src="assets/cards/embedded.png" class="card_logo" loading="lazy"/>
+          <ul class="card_list">
+            <li>Microcontroller Programming</li>
+            <li>Real-time Systems</li>
+            <li>C/C++ for Embedded Systems</li>
+          </ul>
+        </div>
+        <div id="python_development" class="card">
+          <h3 class="card_title">Python Developer</h3>
+          <img id="python_logo" alt="Python" src="assets/cards/python.png" class="card_logo" loading="lazy"/>
+          <ul class="card_list">
+            <li>Data Analysis and Automation</li>
+            <li>Machine Learning</li>
+            <li>Web Development</li>
+          </ul>
+        </div>
+        <div id="c_cpp_development" class="card">
+          <h3 class="card_title">C/C++ Developer</h3>
+          <img id="c_cpp_logo" alt="C/C++" src="assets/cards/cpp.png" class="card_logo" loading="lazy"/>
+          <ul class="card_list">
+            <li>System Programming</li>
+            <li>Software Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <section class="education">
-        <h2>Education</h2>
-        <p><strong>Bachelor of Technology in Computer Science</strong></p>
-        <p>2</p>
-      </section>
+    <section id="work_experience" class="aftertw scroll-element">
+      <h1 class="titlehead">WORK EXPERIENCE</h1>
+      <div class="we_timeline">
+        <div class="we_container left">
+          <div class="we_date">Jan 2025 - Present</div>
+          <img class="icon" alt="Company Logo" src="assets/timeline/company.png" loading="lazy"/>
+          <div class="we_content">
+            <h2>Embedded Systems Engineer</h2>
+            <h3>XYZ Corporation</h3>
+          </div>
+        </div>
+        <div class="we_container right">
+          <div class="we_date">Jun 2021 - Dec 2022</div>
+          <img class="icon" alt="Capgemini Logo" src="assets/timeline/capgemini.png" loading="lazy"/>
+          <div class="we_content">
+            <h2>Software Developer</h2>
+            <h3>Capgemini</h3>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:harishpalutla71@gmail.com">harishpalutla71@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/harishpalutla" target="_blank">linkedin.com/in/harishpalutla</a></p>
-      </section>
-    </div>
+    <section id="education" class="aftertw scroll-element">
+      <h1 class="titlehead">EDUCATION</h1>
+      <div class="we_timeline">
+        <div class="we_container left">
+          <div class="we_date_education">2019 - 2023</div>
+          <img class="icon" alt="University Logo" src="assets/timeline/university.png" loading="lazy"/>
+          <div class="we_content">
+            <h2>Bachelor of Technology in Computer Science</h2>
+            <h3>XYZ University</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="aftertw scroll-element last-section">
+      <h1 class="titlehead">PROJECTS</h1>
+      <div id="projects_view" class="projects-cards">
+        <label id="left_card" for="left_slider" class="left_card card clearfix">
+          <h1 class="card_title">Project 1</h1> 
+          <img id="left_img" class="card_logo" loading="lazy" src="assets/projects/project1.png"/>
+          <p class="card_description">Description of Project 1.</p>
+          <button id="left_card_button" class="projectsbutton">View Details</button>
+        </label>
+        <label id="center_card" for="center_slider" class="center_card card clearfix">
+          <h1 class="card_title">Project 2</h1> 
+          <img id="center_img" class="card_logo" loading="lazy" src="assets/projects/project2.png"/>
+          <p class="card_description">Description of Project 2.</p>
+          <button id="center_card_button" class="projectsbutton">View Details</button>
+        </label>
+        <label id="right_card" for="right_slider" class="right_card card clearfix">
+          <h1 class="card_title">Project 3</h1> 
+          <img id="right_img" class="card_logo" loading="lazy" src="assets/projects/project3.png"/>
+          <p class="card_description">Description of Project 3.</p>
+          <button id="right_card_button" class="projectsbutton">View Details</button>
+        </label>
+      </div>
+    </section>
   </div>
-
-  <footer>
-    <p>&copy; 2025 Harish Palutla</p>
-  </footer>
 </body>
 </html>
+
 
